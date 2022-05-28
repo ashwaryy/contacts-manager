@@ -11,7 +11,7 @@ const passwordValidation = (passwordEnteredByUser, hash, res, email) => {
     } else {
       const id = new Date().getDate();
       const token = jwt.sign({ id, email }, process.env.JWT_SECRET, {
-        expiresIn: "30d",
+        expiresIn: "10d",
       });
       res.status(200).json({ status: "success", token: token });
     }
