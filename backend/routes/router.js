@@ -12,7 +12,7 @@ router.post("/login", userLogin);
 router
   .route("/contacts")
   .get(authMiddleware, getAllContacts)
-  .post(authMiddleware, upload, createContact);
+  .post(upload, authMiddleware, createContact);
 // router
 //   .route("/contacts")
 //   .get(authMiddleware, getAllContacts)

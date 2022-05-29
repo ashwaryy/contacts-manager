@@ -55,3 +55,23 @@
   justify-content: flex-end;
   width: 50%;
 }
+#contacts-table {
+  width: 100%;
+  margin-top: 1%;
+}
+
+#contacts-table-header {
+  background-color: #b2dfff;
+  height: 45px;
+  text-align: left;
+}
+
+input[type="checkbox"] {
+  width: 12px; /*Desired width*/
+  height: 12px; /*Desired height*/
+  margin-top: 16px;
+  margin-right: 10px;
+}
+.contacts-table-rows {
+  height: 45px;
+}

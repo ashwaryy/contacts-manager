@@ -5,7 +5,7 @@ import axios from "axios";
 function ImportCSV() {
   // State to store parsed data
   const [parsedData, setParsedData] = useState([]);
-
+  const token = localStorage.getItem("token");
   const changeHandler = (event) => {
     Papa.parse(event.target.files[0], {
       header: true,
@@ -22,9 +22,12 @@ function ImportCSV() {
         method: "post",
         url: "http://localhost:3001/contacts",
         data: parsedData,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
     }
-  }, [parsedData]);
+  }, [parsedData, token]);
   return (
     <div>
       {/* File Uploader */}

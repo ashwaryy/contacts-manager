@@ -2,10 +2,8 @@ const Contact = require("../models/Contact");
 
 const createContact = async (req, res) => {
   try {
-    console.log(req.body);
     const contactsToBeAdded = req.body;
     const check = contactsToBeAdded[0];
-    console.log(check);
     if (
       check.name &&
       check.designation &&
@@ -16,7 +14,7 @@ const createContact = async (req, res) => {
       check.country
     ) {
       console.log("check passed");
-      const queryUser = "ashwaryy@gmail.com";
+      const queryUser = req.user.email;
       const user = await Contact.findOne({ user: queryUser });
       if (!user) {
         await Contact.create({

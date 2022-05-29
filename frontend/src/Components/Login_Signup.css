@@ -46,3 +46,18 @@ input {
   text-decoration: none;
   margin-top: 20px;
 }
+.lp-wrong-password {
+  align-self: flex-start;
+  margin-top: 0px;
+  font-size: smaller;
+  color: red;
+  display: none;
+}
+
+.lp-wrong-email {
+  align-self: flex-start;
+  margin-top: 0px;
+  font-size: smaller;
+  color: red;
+  display: none;
+}
