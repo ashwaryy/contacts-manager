@@ -1,35 +1,43 @@
 const mongoose = require("mongoose");
 
 const ContactSchema = new mongoose.Schema({
-  name: {
+  user: {
     type: String,
-    required: [true, "must provide name"],
+    required: [true, "user must be provided"],
   },
-  designation: {
-    type: String,
-    required: [true, "must provide designation"],
-  },
-  company: {
-    type: String,
-    required: [true, "must provide company"],
-  },
-  industry: {
-    type: String,
-    required: [true, "must provide industry"],
-  },
-  email: {
-    type: String,
-    required: [true, "must provide email"],
-  },
-  phone: {
-    type: Number,
-    required: [true, "must provide phone"],
-  },
-  country: {
-    type: String,
-    required: [true, "must provide country"],
-    maxLength: 3,
-  },
+  contacts: [
+    {
+      name: {
+        type: String,
+        required: [true, "user must be provided"],
+      },
+      designation: {
+        type: String,
+        default: "",
+      },
+      company: {
+        type: String,
+        default: "",
+      },
+      industry: {
+        type: String,
+        default: "",
+      },
+      email: {
+        type: String,
+        default: "",
+      },
+      phone: {
+        type: Number,
+        default: "",
+      },
+      country: {
+        type: String,
+        default: "",
+        maxLength: 3,
+      },
+    },
+  ],
 });
 
 module.exports = mongoose.model("Contact", ContactSchema);
