@@ -3,13 +3,13 @@ const mongoose = require("mongoose");
 const ContactSchema = new mongoose.Schema({
   user: {
     type: String,
-    required: [true, "user must be provided"],
+    required: true,
   },
   contacts: [
     {
       name: {
         type: String,
-        required: [true, "user must be provided"],
+        required: true,
       },
       designation: {
         type: String,

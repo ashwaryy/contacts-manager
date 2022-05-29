@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Papa from "papaparse";
+import axios from "axios";
 
 function ImportCSV() {
   // State to store parsed data
@@ -16,7 +17,13 @@ function ImportCSV() {
     });
   };
   useEffect(() => {
-    console.log(parsedData);
+    if (parsedData.length) {
+      axios({
+        method: "post",
+        url: "http://localhost:3001/contacts",
+        data: parsedData,
+      });
+    }
   }, [parsedData]);
   return (
     <div>
