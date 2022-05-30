@@ -1,0 +1,39 @@
+.LandingPage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: calc(100%-20px);
+    height: 80vh;
+    margin: 5%;
+    background-color: aliceblue;
+    text-align: center;
+}
+.Landing h1
+{
+    margin: auto;
+}
+.btn button{
+    width: 250px;
+    justify-content: center;
+    padding: 15px;
+    font-size: medium;
+    border-radius: 10px;
+    margin-top: 15%;
+    margin: auto;
+    background-color: rgb(116, 116, 245);
+
+}
+div{
+    margin: 20px;
+}
+
+.btn button :hover{
+    cursor: pointer;
+}
+
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
