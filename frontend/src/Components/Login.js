@@ -11,9 +11,7 @@ const Login = () => {
   myHeaders.append("Content-Type", "application/json");
   const SubmitHandler = async () => {
     const email = document.getElementById("email").value;
-    console.log(email);
     const password = document.getElementById("password").value;
-    console.log(password);
     const url = apiURL;
     const data = { email: email, password: password };
     const response = await fetch(url, {
