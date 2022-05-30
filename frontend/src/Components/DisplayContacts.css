@@ -42,6 +42,11 @@
   width: 17%;
   height: 100vh;
 }
+#sidebar-top-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #display-contacts-body {
   background-color: whitesmoke;
   border-radius: 7px;

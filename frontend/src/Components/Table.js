@@ -3,9 +3,9 @@ import { ReactComponent as Edit } from "../assets/edit.svg";
 import { ReactComponent as Delete } from "../assets/delete.svg";
 import { ReactComponent as Date } from "../assets/selectdate.svg";
 import { ReactComponent as Filter } from "../assets/filter.svg";
-import { ReactComponent as DeleteAll } from "../assets/deleteall.svg";
 import { ReactComponent as Export } from "../assets/export.svg";
 import ImportCSV from "./ImportCSV";
+import DeleteContacts from "./DeleteContacts";
 
 function Table() {
   const [data, setData] = useState([]);
@@ -35,7 +35,7 @@ function Table() {
 
         <div id="display-contacts-toolbar-right">
           <button className="tooltip-buttons">
-            <DeleteAll />
+            <DeleteContacts />
           </button>
           <ImportCSV />
           <button className="tooltip-buttons">
@@ -61,7 +61,11 @@ function Table() {
           {data.map((contact) => (
             <tr className="contacts-table-rows" key={contact._id}>
               <td>
-                <input type="checkbox" id={contact._id} />
+                <input
+                  type="checkbox"
+                  id={contact._id}
+                  className="contact-checkbox"
+                />
               </td>
 
               <td>{contact.name}</td>
