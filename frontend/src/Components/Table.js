@@ -4,8 +4,8 @@ import { ReactComponent as Delete } from "../assets/delete.svg";
 import { ReactComponent as Date } from "../assets/selectdate.svg";
 import { ReactComponent as Filter } from "../assets/filter.svg";
 import { ReactComponent as DeleteAll } from "../assets/deleteall.svg";
-import { ReactComponent as Import } from "../assets/import.svg";
 import { ReactComponent as Export } from "../assets/export.svg";
+import ImportCSV from "./ImportCSV";
 
 function Table() {
   const [data, setData] = useState([]);
@@ -24,7 +24,7 @@ function Table() {
       setData(promise.contactList);
     };
     fetchPosts();
-  }, []);
+  }, [data]);
   return (
     <div id="display-contacts-body">
       <div id="display-contacts-table">
@@ -34,9 +34,13 @@ function Table() {
         </div>
 
         <div id="display-contacts-toolbar-right">
-          <DeleteAll onClick={deleteHandler} style={{ cursor: "pointer" }} />
-          <Import onClick={importHandler} style={{ cursor: "pointer" }} />
-          <Export />
+          <button className="tooltip-buttons">
+            <DeleteAll />
+          </button>
+          <ImportCSV />
+          <button className="tooltip-buttons">
+            <Export />
+          </button>
         </div>
       </div>
       <table id="contacts-table">
@@ -69,7 +73,11 @@ function Table() {
               <td>{contact.country}</td>
               <td>
                 <Edit />
-                <Delete id={contact._id} />
+                <Delete
+                  id={contact._id}
+                  style={{ cursor: "pointer" }}
+                  onClick={deleteHandler}
+                />
               </td>
             </tr>
           ))}
@@ -79,11 +87,22 @@ function Table() {
   );
 }
 
-const importHandler = () => {
-  console.log("I ran");
-};
-const deleteHandler = () => {
-  console.log("I ran");
-};
+function deleteHandler(event) {
+  const token = localStorage.getItem("token");
+  const postID = event.target.id;
+  const apiURL = `http://localhost:3001/contacts/${postID}`;
+
+  const fetchPosts = async () => {
+    const url = apiURL;
+    const response = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log(response);
+  };
+  fetchPosts();
+}
 
 export default Table;

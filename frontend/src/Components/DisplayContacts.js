@@ -3,8 +3,6 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import "./DisplayContacts.css";
 import Table from "./Table";
-import { useNavigate } from "react-router-dom";
-import Login from "./Login";
 function DisplayContacts() {
   const [token, setToken] = useState("");
   useEffect(() => {

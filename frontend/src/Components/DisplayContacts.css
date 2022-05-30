@@ -113,3 +113,54 @@ tr:hover {
 th {
   color: #505050;
 }
+.tooltip-buttons {
+  border: 0;
+  padding: 0;
+  background-color: #ffffff00;
+  cursor: pointer;
+}
+.tooltip-buttons:hover {
+  zoom: 1.02;
+}
+#import-box-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.284);
+}
+#import-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+  height: 180px;
+  width: 200px;
+  background-color: whitesmoke;
+  border-radius: 7px;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+#import-box p {
+  margin-top: 1px;
+  text-align: center;
+  color: #2da5fc;
+}
+#import-box button {
+  background-color: #2da5fc;
+  border-radius: 7px;
+  color: white;
+  width: 100px;
+  height: 30px;
+  border: 0px;
+}
+#import-box h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#import-box-upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

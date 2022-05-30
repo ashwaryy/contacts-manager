@@ -9,7 +9,7 @@ function Header() {
         type="text"
         placeholder="Search by Email Id...."
       />
-      <SuperAdmin style={{ marginRight: "15px" }} />
+      <SuperAdmin style={{ marginRight: "15px" }} id="justforclicks" />
     </div>
   );
 }
