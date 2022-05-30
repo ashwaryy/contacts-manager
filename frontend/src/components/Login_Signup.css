@@ -9,7 +9,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: calc(100%-20px);
   height: 100vh;
   background-image: url("../assets/loginpagebackground.svg");
   background-repeat: no-repeat;

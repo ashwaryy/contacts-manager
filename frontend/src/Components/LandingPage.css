@@ -1,39 +1,38 @@
 .LandingPage {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: calc(100%-20px);
-    height: 80vh;
-    margin: 5%;
-    background-color: aliceblue;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("../assets/loginpagebackground.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
 }
-.Landing h1
-{
-    margin: auto;
+.Landing h1 {
+  margin: auto;
+  color: #7d8cc4;
 }
-.btn button{
-    width: 250px;
-    justify-content: center;
-    padding: 15px;
-    font-size: medium;
-    border-radius: 10px;
-    margin-top: 15%;
-    margin: auto;
-    background-color: rgb(116, 116, 245);
-
+.btn button {
+  width: 300px;
+  justify-content: center;
+  margin: 1%;
+  padding: 10px;
+  background-color: #7d8cc4;
+  border: 1px;
+  border-radius: 5px;
+  color: white;
+  font-size: medium;
+  cursor: pointer;
 }
-div{
-    margin: 20px;
-}
-
-.btn button :hover{
-    cursor: pointer;
+.LandingPage div {
+  margin: 20px;
 }
 
+.btn a {
+  color: rgb(255, 255, 255);
+}
 
-
-a{
-    text-decoration: none;
-    color: black;
+.LandingPage a {
+  text-decoration: none;
 }
