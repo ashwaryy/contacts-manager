@@ -1,4 +1,5 @@
 import React from "react";
+import './Sidebar.css'
 
 function Sidebar() {
   function logOutHandler() {
@@ -10,14 +11,28 @@ function Sidebar() {
     <div id="sidebar-container">
       <div>
         <h1>Logo</h1>
-        <p>Dashboard</p>
-        <p>Total Contacts</p>
+        
+        <div className="dash">
+          <img src="./dash-img.png" alt="dashbord-img"/>
+          <span>Dashboard</span>
+        </div>
+
+        <div className="ttl"> 
+          <img src="./contactimg.png" alt="contact-img"/>
+          <span>Total Contacts</span>
+        </div>
+
       </div>
-      <div id="sidebar-logout">
-        <p onClick={logOutHandler} style={{ cursor: "pointer" }}>
-          Logout
-        </p>
+
+      <div id="sidebar-logout">    
+         <div className="log">
+          <img src="./logout-img.png" alt="logout img"/>
+            <span onClick={logOutHandler} style={{ cursor: "pointer" }}>
+            Logout
+          </span>
+         </div>
       </div>
+
     </div>
   );
 }
