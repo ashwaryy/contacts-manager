@@ -74,6 +74,9 @@ function ImportCSV() {
             <button
               onClick={() => {
                 console.log("modal closed ");
+                setImportStatus("Import File");
+                setImportMessage("Drag & Drop a CSV File to Upload");
+                setShowImportComplete(false);
                 close();
               }}
               style={{ cursor: "pointer" }}

@@ -10,14 +10,19 @@
   justify-content: center;
   flex-direction: column;
   width: calc(100%-20px);
-  height: 80vh;
-  margin: 5%;
-  /* background-color: rgb(148, 201, 248); */
-  background-color: aliceblue;
+  height: 100vh;
+  background-image: url("../assets/loginpagebackground.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   text-align: center;
 }
 .login-container h1 h5 {
   font-weight: 0;
+}
+.login-container h1 {
+  color: #7d8cc4;
+  margin-bottom: 0px;
 }
 /* 
 div .wrapper-inp-btn{
@@ -31,20 +36,26 @@ input {
   justify-content: center;
   margin: 1% auto;
   margin-top: 2%;
-  padding: 10px;
+  padding: 12px;
+  border: 1px solid rgb(229, 228, 228);
+  border-radius: 5px;
 }
 .login-container button {
   width: 424.5px;
   justify-content: center;
   margin: 1%;
   padding: 10px;
-  background-color: rgb(116, 116, 245);
+  background-color: #7d8cc4;
+  border: 1px;
+  border-radius: 5px;
+  color: white;
   font-size: medium;
 }
 
 .login-container a {
   text-decoration: none;
   margin-top: 20px;
+  color: #7d8cc4;
 }
 .lp-wrong-password {
   align-self: flex-start;

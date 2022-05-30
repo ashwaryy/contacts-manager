@@ -1,5 +1,8 @@
 import React from "react";
 import { ReactComponent as Logout } from "../assets/logout.svg";
+import { ReactComponent as Dashboard } from "../assets/dashboard.svg";
+import { ReactComponent as TotalContacts } from "../assets/totalcontacts.svg";
+
 function Sidebar() {
   function logOutHandler() {
     console.log("i ran");
@@ -8,10 +11,10 @@ function Sidebar() {
   }
   return (
     <div id="sidebar-container">
-      <div>
-        <h1>Logo</h1>
-        <p>Dashboard</p>
-        <p>Total Contacts</p>
+      <div id="sidebar-top-menu">
+        <h1 style={{ color: "#0884FF" }}>Logo</h1>
+        <Dashboard />
+        <TotalContacts />
       </div>
       <div
         id="sidebar-logout"

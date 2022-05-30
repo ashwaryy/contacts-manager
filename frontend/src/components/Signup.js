@@ -32,7 +32,7 @@ const Login = () => {
     <div className="Login">
       <div className="login-container">
         <h1>Logo</h1>
-        <h5>create new account</h5>
+        <h5>Create New Account</h5>
         <div className="wrapper-inp-btn">
           <input type="text" placeholder="Name" id="name" required />
           <input type="email" placeholder="User ID" id="email" required />
