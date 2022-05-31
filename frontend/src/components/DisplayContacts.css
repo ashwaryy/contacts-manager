@@ -80,7 +80,14 @@
   height: 45px;
   text-align: left;
 }
-
+#table-footer {
+  display: flex;
+  flex-direction: column;
+  width: ;
+}
+#table-footer-pages {
+  align-self: flex-end;
+}
 input[type="checkbox"] {
   width: 12px; /*Desired width*/
   height: 12px; /*Desired height*/

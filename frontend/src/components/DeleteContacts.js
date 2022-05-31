@@ -5,7 +5,7 @@ import { ReactComponent as DeleteAll } from "../assets/deleteall.svg";
 import { ReactComponent as Dustbin } from "../assets/dustbin.svg";
 import { ReactComponent as ImportComplete } from "../assets/importcomplete.svg";
 
-function DeleteContacts() {
+function DeleteContacts({ setImportPerformed }) {
   const [deleteContactsText, setDeleteContactsText] =
     useState("Delete Contacts");
   const [deleteContactsMessage, setDeleteContactsMessage] = useState(
@@ -33,6 +33,7 @@ function DeleteContacts() {
       },
     }).then((response) => {
       if (response.data === "success") {
+        setImportPerformed(new Date());
         setDeleteContactsText("Deleted Contacts");
         setButtonText("Close");
         setShowOk(false);

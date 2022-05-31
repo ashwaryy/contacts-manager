@@ -9,10 +9,16 @@ import DeleteContacts from "./DeleteContacts";
 
 function Table() {
   const [data, setData] = useState([]);
+  const [pageNumber, setPageNumber] = useState(0);
+  const [importPerformed, setImportPerformed] = useState(0);
+  const [deletePressed, setDeletePressed] = useState(0);
   useEffect(() => {
-    const apiURL = "http://localhost:3001/contacts";
-    const token = localStorage.getItem("token");
+    console.log("rerender");
+
     const fetchPosts = async () => {
+      const apiURL = `http://localhost:3001/contacts?page=${pageNumber}`;
+      console.log(apiURL);
+      const token = localStorage.getItem("token");
       const url = apiURL;
       const response = await fetch(url, {
         method: "GET",
@@ -22,9 +28,30 @@ function Table() {
       });
       const promise = await response.json();
       setData(promise.contactList);
+      console.log("I ran inside fetch");
     };
     fetchPosts();
-  }, [data]);
+  }, [pageNumber, deletePressed, importPerformed]);
+
+  function deleteHandler(event) {
+    const token = localStorage.getItem("token");
+    const postID = event.target.id;
+    const apiURL = `http://localhost:3001/contacts/${postID}`;
+
+    const deleteContact = async () => {
+      const url = apiURL;
+      const response = await fetch(url, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.status === 200) {
+        setDeletePressed(deletePressed + 1);
+      }
+    };
+    deleteContact();
+  }
   return (
     <div id="display-contacts-body">
       <div id="display-contacts-table">
@@ -35,9 +62,9 @@ function Table() {
 
         <div id="display-contacts-toolbar-right">
           <button className="tooltip-buttons">
-            <DeleteContacts />
+            <DeleteContacts setImportPerformed={setImportPerformed} />
           </button>
-          <ImportCSV />
+          <ImportCSV setImportPerformed={setImportPerformed} />
           <button className="tooltip-buttons">
             <Export />
           </button>
@@ -47,7 +74,11 @@ function Table() {
         <tbody>
           <tr id="contacts-table-header">
             <th>
-              <input type="checkbox" id="delete-all-contacts" />
+              <input
+                type="checkbox"
+                id="delete-all-contacts"
+                onClick={checkAll}
+              />
             </th>
             <th>Name</th>
             <th>| Designation</th>
@@ -87,26 +118,70 @@ function Table() {
           ))}
         </tbody>
       </table>
+      <div id="table-footer">
+        <div id="table-footer-pages">
+          <button
+            onClick={() => {
+              if (pageNumber > 0) {
+                setPageNumber(pageNumber - 1);
+              }
+            }}
+          >
+            {"<"}
+          </button>
+          <button
+            onClick={() => {
+              setPageNumber(0);
+            }}
+          >
+            1
+          </button>
+          <button
+            onClick={() => {
+              setPageNumber(1);
+            }}
+          >
+            2
+          </button>
+          <button
+            onClick={() => {
+              setPageNumber(2);
+            }}
+          >
+            3
+          </button>
+          <button
+            onClick={() => {
+              setPageNumber(3);
+            }}
+          >
+            4
+          </button>
+          <button
+            onClick={() => {
+              setPageNumber(pageNumber + 1);
+            }}
+          >
+            {">"}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
 
-function deleteHandler(event) {
-  const token = localStorage.getItem("token");
-  const postID = event.target.id;
-  const apiURL = `http://localhost:3001/contacts/${postID}`;
-
-  const fetchPosts = async () => {
-    const url = apiURL;
-    const response = await fetch(url, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    console.log(response);
-  };
-  fetchPosts();
+function checkAll(e) {
+  const Allcheckboxes = document.querySelectorAll('input[type="checkbox"]');
+  console.log(Allcheckboxes);
+  if (e.target.checked) {
+    for (let i = 1; i < Allcheckboxes.length; i++) {
+      Allcheckboxes[i].checked = true;
+    }
+  } else {
+    for (let i = 0; i < Allcheckboxes.length; i++) {
+      Allcheckboxes[i].checked = false;
+    }
+  }
 }
 
 export default Table;

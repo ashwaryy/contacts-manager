@@ -1,7 +1,6 @@
 const Contact = require("../models/Contact");
 
 const deleteContact = async (req, res) => {
-  console.log("delete request received");
   const { email } = req.user;
   const { id } = req.params;
   try {

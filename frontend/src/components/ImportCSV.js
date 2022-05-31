@@ -8,7 +8,7 @@ import Popup from "reactjs-popup";
 import { FileUploader } from "react-drag-drop-files";
 const fileTypes = ["CSV"];
 
-function ImportCSV() {
+function ImportCSV({ setImportPerformed }) {
   // State to store parsed data
   const [parsedData, setParsedData] = useState([]);
   const [importStatus, setImportStatus] = useState("Import File");
@@ -29,6 +29,7 @@ function ImportCSV() {
     });
   };
   useEffect(() => {
+    console.log("render ImportCSV");
     if (parsedData.length) {
       axios({
         method: "post",
@@ -39,6 +40,7 @@ function ImportCSV() {
         },
       }).then((response) => {
         if (response.data === "success") {
+          setImportPerformed(new Date());
           setImportStatus("Import Complete");
           setImportMessage("CSV File is Uploaded");
           setButtonText("Close");
@@ -46,7 +48,7 @@ function ImportCSV() {
         }
       });
     }
-  }, [parsedData, token]);
+  }, [parsedData, token, setImportPerformed]);
   return (
     <Popup
       trigger={
