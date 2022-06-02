@@ -6,6 +6,7 @@ import { ReactComponent as Filter } from "../assets/filter.svg";
 import { ReactComponent as Export } from "../assets/export.svg";
 import ImportCSV from "./ImportCSV";
 import DeleteContacts from "./DeleteContacts";
+import './Pagination.css';
 
 function Table() {
   console.log("rendering Table.js");
