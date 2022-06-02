@@ -8,6 +8,7 @@ import ImportCSV from "./ImportCSV";
 import DeleteContacts from "./DeleteContacts";
 
 function Table() {
+  console.log("rendering Table.js");
   const [data, setData] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
   const [importPerformed, setImportPerformed] = useState(0);
@@ -17,7 +18,6 @@ function Table() {
 
     const fetchPosts = async () => {
       const apiURL = `http://localhost:3001/contacts?page=${pageNumber}`;
-      console.log(apiURL);
       const token = localStorage.getItem("token");
       const url = apiURL;
       const response = await fetch(url, {
@@ -61,9 +61,7 @@ function Table() {
         </div>
 
         <div id="display-contacts-toolbar-right">
-          <button className="tooltip-buttons">
-            <DeleteContacts setImportPerformed={setImportPerformed} />
-          </button>
+          <DeleteContacts setImportPerformed={setImportPerformed} />
           <ImportCSV setImportPerformed={setImportPerformed} />
           <button className="tooltip-buttons">
             <Export />

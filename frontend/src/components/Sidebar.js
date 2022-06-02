@@ -4,6 +4,8 @@ import { ReactComponent as Dashboard } from "../assets/dashboard.svg";
 import { ReactComponent as TotalContacts } from "../assets/totalcontacts.svg";
 
 function Sidebar() {
+  console.log("rendering Sidebar.js");
+
   function logOutHandler() {
     console.log("i ran");
     localStorage.removeItem("token");

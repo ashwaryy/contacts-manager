@@ -6,6 +6,8 @@ import { ReactComponent as Dustbin } from "../assets/dustbin.svg";
 import { ReactComponent as ImportComplete } from "../assets/importcomplete.svg";
 
 function DeleteContacts({ setImportPerformed }) {
+  console.log("rendering DeleteContacts.js");
+
   const [deleteContactsText, setDeleteContactsText] =
     useState("Delete Contacts");
   const [deleteContactsMessage, setDeleteContactsMessage] = useState(
@@ -66,7 +68,6 @@ function DeleteContacts({ setImportPerformed }) {
             >
               <button
                 onClick={() => {
-                  console.log("modal closed ");
                   setDeleteContactsText("Delete Contacts");
                   setDeleteContactsMessage(
                     "Sure you want to delete these Contacts?"

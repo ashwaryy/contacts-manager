@@ -2,6 +2,8 @@ import React from "react";
 import { ReactComponent as SuperAdmin } from "../assets/superadmin.svg";
 
 function Header() {
+  console.log("rendering Header.js");
+
   return (
     <div id="header-container">
       <h2>Total Contacts</h2>
