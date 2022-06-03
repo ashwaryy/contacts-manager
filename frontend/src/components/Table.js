@@ -6,11 +6,9 @@ import { ReactComponent as Filter } from "../assets/filter.svg";
 import { ReactComponent as Export } from "../assets/export.svg";
 import ImportCSV from "./ImportCSV";
 import DeleteContacts from "./DeleteContacts";
-import './Pagination.css';
 
-function Table() {
+function Table({ data, setData }) {
   console.log("rendering Table.js");
-  const [data, setData] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
   const [importPerformed, setImportPerformed] = useState(0);
   const [deletePressed, setDeletePressed] = useState(0);
@@ -32,7 +30,7 @@ function Table() {
       console.log("I ran inside fetch");
     };
     fetchPosts();
-  }, [pageNumber, deletePressed, importPerformed]);
+  }, [pageNumber, deletePressed, importPerformed, setData]);
 
   function deleteHandler(event) {
     const token = localStorage.getItem("token");
@@ -102,7 +100,10 @@ function Table() {
               <td>{contact.designation}</td>
               <td>{contact.company}</td>
               <td>{contact.industry}</td>
-              <td>{contact.email}</td>
+              <td className="table-email-row">
+                {contact.email}
+                {/* <div>{contact.email}</div> */}
+              </td>
               <td>{contact.phone}</td>
               <td>{contact.country}</td>
               <td>
@@ -132,6 +133,9 @@ function Table() {
             onClick={() => {
               setPageNumber(0);
             }}
+            style={
+              pageNumber === 0 ? { color: "#2DA5FC" } : { color: "#CBCBCB" }
+            }
           >
             1
           </button>
@@ -139,6 +143,9 @@ function Table() {
             onClick={() => {
               setPageNumber(1);
             }}
+            style={
+              pageNumber === 1 ? { color: "#2DA5FC" } : { color: "#CBCBCB" }
+            }
           >
             2
           </button>
@@ -146,6 +153,9 @@ function Table() {
             onClick={() => {
               setPageNumber(2);
             }}
+            style={
+              pageNumber === 2 ? { color: "#2DA5FC" } : { color: "#CBCBCB" }
+            }
           >
             3
           </button>
@@ -153,6 +163,9 @@ function Table() {
             onClick={() => {
               setPageNumber(3);
             }}
+            style={
+              pageNumber === 3 ? { color: "#2DA5FC" } : { color: "#CBCBCB" }
+            }
           >
             4
           </button>

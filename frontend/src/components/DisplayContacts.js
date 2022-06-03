@@ -5,6 +5,8 @@ import "./DisplayContacts.css";
 import Table from "./Table";
 function DisplayContacts() {
   const [token, setToken] = useState("");
+  const [data, setData] = useState([]);
+  console.log(data);
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -19,8 +21,8 @@ function DisplayContacts() {
       <div id="display-contacts-main-container">
         <Sidebar />
         <div id="header-and-contact">
-          <Header />
-          <Table />
+          <Header setData={setData} />
+          <Table data={data} setData={setData} />
         </div>
       </div>
     );
