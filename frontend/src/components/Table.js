@@ -8,13 +8,10 @@ import ImportCSV from "./ImportCSV";
 import DeleteContacts from "./DeleteContacts";
 
 function Table({ data, setData }) {
-  console.log("rendering Table.js");
   const [pageNumber, setPageNumber] = useState(0);
   const [importPerformed, setImportPerformed] = useState(0);
   const [deletePressed, setDeletePressed] = useState(0);
   useEffect(() => {
-    console.log("rerender");
-
     const fetchPosts = async () => {
       const apiURL = `http://localhost:3001/contacts?page=${pageNumber}`;
       const token = localStorage.getItem("token");
@@ -27,7 +24,6 @@ function Table({ data, setData }) {
       });
       const promise = await response.json();
       setData(promise.contactList);
-      console.log("I ran inside fetch");
     };
     fetchPosts();
   }, [pageNumber, deletePressed, importPerformed, setData]);

@@ -44,10 +44,10 @@
   background-color: white;
   width: 25%;
   border-radius: 7px;
-  height: 250px;
   overflow-y: scroll;
   padding: 2%;
   overflow: hidden;
+  max-height: 500px;
 }
 #sidebar-container {
   display: flex;

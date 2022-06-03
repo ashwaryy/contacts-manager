@@ -3,10 +3,8 @@ const Contact = require("../models/Contact");
 const searchContacts = async (req, res) => {
   try {
     const searchQuery = req.query.search || "";
-    console.log(searchQuery);
 
     user = req.user.email;
-    console.log(user);
     if (searchQuery.length) {
       const searchResults = await Contact.find({
         email: { $regex: searchQuery },

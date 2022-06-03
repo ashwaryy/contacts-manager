@@ -29,7 +29,6 @@ function ImportCSV({ setImportPerformed }) {
     });
   };
   useEffect(() => {
-    console.log("render ImportCSV");
     if (parsedData.length) {
       axios({
         method: "post",

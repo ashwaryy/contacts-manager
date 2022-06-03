@@ -5,7 +5,6 @@ import { ReactComponent as SearchIcon } from "../assets/searchicon.svg";
 function Header({ setData }) {
   const [searchquery, setSearchQuery] = useState("");
   const [searchData, setSearchData] = useState("");
-  console.log(searchData);
   function handleSearch(e) {
     setSearchQuery(e.target.value);
   }
@@ -13,7 +12,6 @@ function Header({ setData }) {
   async function handleSearchClick(e) {
     console.log(e.target);
     const apiURL = `http://localhost:3001/contacts/${e.target.id}`;
-    console.log(apiURL);
     const token = localStorage.getItem("token");
     const url = apiURL;
     const response = await fetch(url, {
@@ -29,9 +27,7 @@ function Header({ setData }) {
     setSearchData("");
   }
   useEffect(() => {
-    console.log("rerender");
     const fetchPosts = async () => {
-      console.log("fetch request sent from header");
       const apiURL = `http://localhost:3001/search?search=${searchquery}`;
       const token = localStorage.getItem("token");
       const url = apiURL;

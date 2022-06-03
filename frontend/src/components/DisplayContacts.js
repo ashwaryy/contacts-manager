@@ -6,7 +6,6 @@ import Table from "./Table";
 function DisplayContacts() {
   const [token, setToken] = useState("");
   const [data, setData] = useState([]);
-  console.log(data);
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
