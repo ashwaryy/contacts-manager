@@ -26,7 +26,7 @@ function DeleteContacts({ setImportPerformed }) {
 
     axios({
       method: "delete",
-      url: "http://localhost:3001/contacts",
+      url: "https://contacts-manager-b.herokuapp.com/contacts",
       data: contactsToBeDeleted,
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,

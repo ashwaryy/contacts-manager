@@ -13,7 +13,7 @@ function Table({ data, setData }) {
   const [deletePressed, setDeletePressed] = useState(0);
   useEffect(() => {
     const fetchPosts = async () => {
-      const apiURL = `http://localhost:3001/contacts?page=${pageNumber}`;
+      const apiURL = `https://contacts-manager-b.herokuapp.com/contacts?page=${pageNumber}`;
       const token = localStorage.getItem("token");
       const url = apiURL;
       const response = await fetch(url, {
@@ -31,7 +31,7 @@ function Table({ data, setData }) {
   function deleteHandler(event) {
     const token = localStorage.getItem("token");
     const postID = event.target.id;
-    const apiURL = `http://localhost:3001/contacts/${postID}`;
+    const apiURL = `https://contacts-manager-b.herokuapp.com/contacts/${postID}`;
 
     const deleteContact = async () => {
       const url = apiURL;

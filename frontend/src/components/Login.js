@@ -5,7 +5,7 @@ import "./Login_Signup.css";
 const Login = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const apiURL = "http://localhost:3001/login";
+  const apiURL = "https://contacts-manager-b.herokuapp.com/login";
   const [authToken, setAuthToken] = useState("");
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");

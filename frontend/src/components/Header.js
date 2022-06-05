@@ -11,7 +11,7 @@ function Header({ setData }) {
 
   async function handleSearchClick(e) {
     console.log(e.target);
-    const apiURL = `http://localhost:3001/contacts/${e.target.id}`;
+    const apiURL = `https://contacts-manager-b.herokuapp.com/contacts/${e.target.id}`;
     const token = localStorage.getItem("token");
     const url = apiURL;
     const response = await fetch(url, {
@@ -28,7 +28,7 @@ function Header({ setData }) {
   }
   useEffect(() => {
     const fetchPosts = async () => {
-      const apiURL = `http://localhost:3001/search?search=${searchquery}`;
+      const apiURL = `https://contacts-manager-b.herokuapp.com/search?search=${searchquery}`;
       const token = localStorage.getItem("token");
       const url = apiURL;
       const response = await fetch(url, {

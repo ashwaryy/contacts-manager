@@ -32,7 +32,7 @@ function ImportCSV({ setImportPerformed }) {
     if (parsedData.length) {
       axios({
         method: "post",
-        url: "http://localhost:3001/contacts",
+        url: "https://contacts-manager-b.herokuapp.com/contacts",
         data: parsedData,
         headers: {
           Authorization: `Bearer ${token}`,

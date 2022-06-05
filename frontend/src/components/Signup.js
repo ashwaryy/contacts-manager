@@ -3,7 +3,7 @@ import "./Login_Signup.css";
 
 const Login = () => {
   const navigate = useNavigate();
-  const apiURL = "http://localhost:3001/register";
+  const apiURL = "https://contacts-manager-b.herokuapp.com/register";
   const SubmitHandler = async () => {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
