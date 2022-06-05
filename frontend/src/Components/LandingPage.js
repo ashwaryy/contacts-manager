@@ -3,9 +3,6 @@ import "./LandingPage.css";
 const LandingPage = () => {
   return (
     <div className="LandingPage">
-      {/* <div className='name'>
-                <em>Group-3</em>
-            </div> */}
       <div className="Landing">
         <div className="heading">
           <h1>Contacts Manager</h1>
