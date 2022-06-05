@@ -1,6 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
-const LandingPage = () => {
+function LandingPage() {
   return (
     <div className="LandingPage">
       <div className="Landing">
@@ -18,5 +18,5 @@ const LandingPage = () => {
       </div>
     </div>
   );
-};
+}
 export default LandingPage;
