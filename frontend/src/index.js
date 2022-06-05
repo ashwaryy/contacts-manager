@@ -6,14 +6,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ImportCSV from "./components/ImportCSV";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import Homepage from "./components/Homepage";
 import DisplayContacts from "./components/DisplayContacts";
+import LandingPage from "./components/LandingPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Homepage />} />
+      <Route path="/" element={<LandingPage />} />
       <Route path="/import" element={<ImportCSV />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
