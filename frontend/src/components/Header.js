@@ -10,7 +10,6 @@ function Header({ setData }) {
   }
 
   async function handleSearchClick(e) {
-    console.log(e.target);
     const apiURL = `https://contacts-manager-b.herokuapp.com/contacts/${e.target.id}`;
     const token = localStorage.getItem("token");
     const url = apiURL;
@@ -22,7 +21,6 @@ function Header({ setData }) {
     });
 
     const fetchedData = await response.json();
-    console.log(fetchedData);
     setData(fetchedData.contact);
     setSearchData("");
   }

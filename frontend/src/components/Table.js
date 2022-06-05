@@ -96,11 +96,11 @@ function Table({ data, setData }) {
               <td>{contact.designation}</td>
               <td>{contact.company}</td>
               <td>{contact.industry}</td>
-              <div id="table-email-row" data-title={contact.email}>
+              <td id="table-email-row" data-title={contact.email}>
                 {contact.email.length > 19
                   ? contact.email.substring(0, 20) + "..."
                   : contact.email}
-              </div>
+              </td>
 
               <td>{contact.phone}</td>
               <td>{contact.country}</td>
@@ -182,7 +182,6 @@ function Table({ data, setData }) {
 
 function checkAll(e) {
   const Allcheckboxes = document.querySelectorAll('input[type="checkbox"]');
-  console.log(Allcheckboxes);
   if (e.target.checked) {
     for (let i = 1; i < Allcheckboxes.length; i++) {
       Allcheckboxes[i].checked = true;

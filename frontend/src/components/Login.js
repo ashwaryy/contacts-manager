@@ -25,7 +25,6 @@ const Login = () => {
       localStorage.removeItem("token");
       localStorage.setItem("token", status.token);
       myHeaders.append("Authorization", `Bearer ${authToken}`);
-      console.log("ran till here");
       navigate("/");
     } else if (status.message === "password mismatch") {
       const errorText = document.getElementsByClassName("lp-wrong-password")[0];

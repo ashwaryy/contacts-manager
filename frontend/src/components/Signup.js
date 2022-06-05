@@ -19,7 +19,6 @@ const Login = () => {
       body: JSON.stringify(data),
     });
     const status = await response.json();
-    console.log(status);
     if (status.status) {
       window.alert("Registration Successful, Please login to view contacts");
       navigate("/login");

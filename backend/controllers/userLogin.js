@@ -19,7 +19,6 @@ const passwordValidation = (passwordEnteredByUser, hash, res, email) => {
 };
 const userLogin = async (req, res) => {
   try {
-    console.log("req received");
     const { email, password } = req.body;
 
     const findQueryUserinDB = await User.findOne({ email: email });

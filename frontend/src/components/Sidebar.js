@@ -5,7 +5,6 @@ import { ReactComponent as TotalContacts } from "../assets/totalcontacts.svg";
 
 function Sidebar() {
   function logOutHandler() {
-    console.log("i ran");
     localStorage.removeItem("token");
     window.location.reload();
   }
