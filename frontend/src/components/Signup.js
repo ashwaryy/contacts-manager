@@ -38,7 +38,7 @@ const Login = () => {
           <input type="email" placeholder="User ID" id="email" required />
           <input
             type="password"
-            placeholder="Confirm Password"
+            placeholder="Password"
             id="password"
             required
           />

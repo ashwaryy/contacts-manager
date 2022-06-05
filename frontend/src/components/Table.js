@@ -96,10 +96,12 @@ function Table({ data, setData }) {
               <td>{contact.designation}</td>
               <td>{contact.company}</td>
               <td>{contact.industry}</td>
-              <td className="table-email-row">
-                {contact.email}
-                {/* <div>{contact.email}</div> */}
-              </td>
+              <div id="table-email-row" data-title={contact.email}>
+                {contact.email.length > 19
+                  ? contact.email.substring(0, 20) + "..."
+                  : contact.email}
+              </div>
+
               <td>{contact.phone}</td>
               <td>{contact.country}</td>
               <td>

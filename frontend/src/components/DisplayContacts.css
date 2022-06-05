@@ -199,16 +199,20 @@ th {
   align-items: center;
 }
 
-.table-email-row div {
-  display: none;
-  background-color: white;
+[data-title] {
+  margin-top: 5%;
+  width: 120px;
   position: relative;
-  top: 30px;
-  z-index: 2;
-  margin-top: 0px;
+  cursor: pointer;
+  transition: 1s;
 }
-
-.table-email-row:hover div {
-  display: block;
-  animation-delay: 2s;
+[data-title]:hover::before {
+  z-index: 1;
+  content: attr(data-title);
+  position: absolute;
+  bottom: -54px;
+  padding: 10px;
+  color: white;
+  background: rgb(0, 0, 0);
+  white-space: nowrap;
 }
