@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
 import ImportCSV from "./components/ImportCSV";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
@@ -13,11 +12,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<LandingPage />} />
+      <Route path="/" element={<DisplayContacts />} />
       <Route path="/import" element={<ImportCSV />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/main" element={<DisplayContacts />} />
       <Route path="*" element={"Error"} />
     </Routes>
   </BrowserRouter>

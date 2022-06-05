@@ -26,7 +26,7 @@ const Login = () => {
       localStorage.setItem("token", status.token);
       myHeaders.append("Authorization", `Bearer ${authToken}`);
       console.log("ran till here");
-      navigate("/main");
+      navigate("/");
     } else if (status.message === "password mismatch") {
       const errorText = document.getElementsByClassName("lp-wrong-password")[0];
       errorText.style.display = "block";
@@ -81,7 +81,7 @@ const Login = () => {
         className="logp-button"
         style={{ width: "150px", height: "50px", marginTop: "0px" }}
       >
-        <a href="/main" style={{ textDecoration: "none", marginBottom: "0px" }}>
+        <a href="/" style={{ textDecoration: "none", marginBottom: "0px" }}>
           Go To Contacts Page
         </a>
       </button>
