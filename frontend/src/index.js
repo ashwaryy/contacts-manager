@@ -3,11 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
 import ImportCSV from "./components/ImportCSV";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import DisplayContacts from "./components/DisplayContacts";
-import LandingPage from "./components/LandingPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
